@@ -42,4 +42,8 @@ docker exec -it traffic-simulator bash
 go run main.go
 ```
 
+to create a producer 
+```
+kafka-console-producer --bootstrap-server=localhost:9092 --topic=readteste
+```
 
