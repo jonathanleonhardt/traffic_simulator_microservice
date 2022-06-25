@@ -1,12 +1,26 @@
 package main
 
 import (
-	"fmt"
+	"log"
 
-	"github.com/jonathanleonhardt/traffic_simulator_microservice/app/route"
+	"github.com/joho/godotenv"
+	"github.com/jonathanleonhardt/traffic_simulator_microservice/infra/kafka"
 )
 
+// executada automaticamente antes do main
+func init() {
+	err := godotenv.Load()
+	if err != nil {
+		log.Fatal("error loading .env file")
+	}
+}
+
 func main() {
+
+	producer := kafka.NewKafkaProducer()
+	kafka.Publish("Hello", "readteste", producer)
+
+	/*  - Teste do leitor de arquivos e esportar das localizações
 	route := route.Route{
 		ID:       "1",
 		ClientID: "1",
@@ -15,4 +29,5 @@ func main() {
 	stringJson, _ := route.ExportJsonPositions()
 
 	fmt.Println(stringJson[0])
+	*/
 }
