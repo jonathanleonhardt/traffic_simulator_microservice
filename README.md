@@ -47,3 +47,5 @@ to create a producer
 kafka-console-producer --bootstrap-server=localhost:9092 --topic=readteste
 ```
 
+*Os topics foram alterador de 'readteste' para route.new-direction e route.new-position em variaveis de ambiente*
+
