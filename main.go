@@ -20,6 +20,10 @@ func main() {
 	producer := kafka.NewKafkaProducer()
 	kafka.Publish("Hello", "readteste", producer)
 
+	for {
+		_ = 1
+	}
+
 	/*  - Teste do leitor de arquivos e esportar das localizações
 	route := route.Route{
 		ID:       "1",
